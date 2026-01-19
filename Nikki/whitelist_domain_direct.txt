@@ -99,6 +99,14 @@
 # 索尼
 +.sony.tv
 
+# 硬件及测试
++.aida64.com
++.mailerlite.com
++.gpu-z.com
++.cpuid.com
++.ocbase.com
++.faas-image-eramap.com
+
 # 杂项
 +.bdurl.net
 +.unpkg.com
@@ -146,11 +154,4 @@
 +.z4a.net
 +.umeng.com
 +.intercom.io
-
-# 硬件及测试
-+.aida64.com
-+.mailerlite.com
-+.gpu-z.com
-+.cpuid.com
-+.ocbase.com
-+.faas-image-eramap.com
++.stripe.com
