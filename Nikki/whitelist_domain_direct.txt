@@ -1,0 +1,156 @@
+# 直连域名白名单
+
+# 微软
++.office.com
++.office365.com
++.microsoft.com
++.s-microsoft.com
++.bing.com
++.bing.net
++.bingapis.com
++.linkedin.com
++.visualstudio.com
++.live.com
++.windows.com
++.skype.com
++.msedge.net
++.azureedge.us
++.azurefd.net
++.vscode-cdn.net
++.msn.com
++.msftconnecttest.com
++.msftncsi.com
++.xboxservices.com
++.cinebench.net
+
+# Cloudflare
++.cloudflare.com
++.cloudflarestorage.com
++.cloudflareinsights.com
+
+# 苹果
++.apple.com
+
+# 腾讯
++.qq.com
+
+#小米
++.miui.com
++.xiaomi.com
++.xiaomi.net
+
+# 硬件
++.asus.com
++.amd.com
+
+# 京东
++.360buyimg.com
++.jd.com
+
+# 知乎
++.zhimg.com
++.zhihu.com
+
+# Github
++.ssh.github.com
+
+# Mozilla
++.stun.services.mozilla.com
+
+# Obsidian
++.obsidian.md
+
+# Karing
++.karing.app
+
+# CDN
++.akamaized.net
++.dyndns.com
++.dnschecker.org
++.licdn.com
++.ydycdn.com
+
+# NTP
++.ntp.org
+
+# Update
++.itopupdate.com
+
+# Metacubex
++.wiki.metacubex.one
++.wikimedia.org
+
+# 可可影视
++.wlcdn88.com
++.qewbn.com
++.tscjzy.com
++.lzcdn31.com
++.yzzy32-play.com
++.dytt-cine.com
++.fengbao9.com
++.ffzy-online.com
++.qewbn.com
++.qrssuv.com
++.yzzy31-play.com
++.dytt-cinema.com
++.fengbao8.com
++.ffzy-video.com
+
+# 索尼
++.sony.tv
+
+# 杂项
++.bdurl.net
++.unpkg.com
++.revenuecat.com
++.snssdk.com
++.lencr.org
++.pub.network
++.floors.dev
++.cfwho.com
++.mixpanel.com
++.reportcpanel.com
++.gdtimg.com
++.comfylink.com
++.appcenter.ms
++.fmhy.net
++.exp-tas.com
++.auth0.com
++.iobit.com
++.digicert.com
++.skk.moe
++.ip.sb
++.jsdelivr.net
++.ipify.org
++.tampermonkey.net
++.scorecardresearch.com
++.azureedge.net
++.ctfassets.net
++.solidigm-nvme.com
++.brave.com
++.bdstatic.com
++.ip-api.com
++.vsassets.io
++.vzuu.com
++.kuaishouzt.com
++.restream.io
++.xilinx.com
++.coveo.com
++.go-mpulse.net
++.amazonaws.com
++.twitch.tv
++.imgflip.com
++.9gag.com
++.wikipedia.org
++.wasu.tv
++.z4a.net
++.umeng.com
++.intercom.io
+
+# 硬件及测试
++.aida64.com
++.mailerlite.com
++.gpu-z.com
++.cpuid.com
++.ocbase.com
++.faas-image-eramap.com
