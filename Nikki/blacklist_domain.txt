@@ -31,6 +31,10 @@
 +.pre-api.miui.security.xiaomi.com
 +.api.xsj.wasu.tv
 +.hotspot4.oenet.fr
++.sdk.open.talk.gepush.com
++.sentry.in.zhihu.com
++.amdcopen.m.umeng.com
++.staticoffice.zhihu.com
 
 # 回环域名
 +.risk.dun.mi.com
@@ -46,6 +50,7 @@
 # 80端口无法连接
 +.qt.qq.com
 +.core.api.mijia.tech
++.stream.api.mijia.tech
 
 
 # 访问端口无法连接
