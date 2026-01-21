@@ -167,3 +167,4 @@
 +.certum.pl
 +.gamer520.com
 +.sectigo.com
++.playfabapi.com
