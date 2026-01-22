@@ -7,7 +7,8 @@
 +.ipv6.msftncsi.com
 +.idx.v6.shub.sandai.net
 +.hub5pr.v6.phub.sandai.net
-+.vcl-brain-v6-lf.ndcpp.com
++.vcl-brain-v6-lf.ndcpp.com+
++.bjmxy.net
 
 # 杂项
 +.siomxity.net
@@ -35,6 +36,16 @@
 +.sentry.in.zhihu.com
 +.amdcopen.m.umeng.com
 +.staticoffice.zhihu.com
++.api.liquidlink.cn
+# 美团
++.route-stats.d.meituan.net
++.metrics-picture.d.meituan.net
++.p14.dreport.meituan.net
++.dxlvs.meituan.com
++.metrics-picture.d.meituan.net
++.api-map.meituan.net
++.m2.dreport.meituan.net
++.maplocatesdksnapshot.d.meituan.net
 
 # 回环域名
 +.risk.dun.mi.com
@@ -46,12 +57,13 @@
 +.tmge.alicdn.com
 +.logsdata.cxkfwn.com
 +.static-ecst.licdn.com
++.imgs.search.brave.com
 
 # 80端口无法连接
 +.qt.qq.com
 +.core.api.mijia.tech
 +.stream.api.mijia.tech
-
++.scenetemplate.cnbj1.mi-fds.com
 
 # 访问端口无法连接
 +.logsdata.cxkfwn.com

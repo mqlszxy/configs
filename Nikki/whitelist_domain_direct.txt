@@ -168,3 +168,4 @@
 +.gamer520.com
 +.sectigo.com
 +.playfabapi.com
++.www2.ati.com
