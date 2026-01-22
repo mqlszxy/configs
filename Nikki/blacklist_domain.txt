@@ -7,7 +7,7 @@
 +.ipv6.msftncsi.com
 +.idx.v6.shub.sandai.net
 +.hub5pr.v6.phub.sandai.net
-+.vcl-brain-v6-lf.ndcpp.com+
++.vcl-brain-v6-lf.ndcpp.com
 +.bjmxy.net
 
 # 杂项
