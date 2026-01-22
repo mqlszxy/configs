@@ -26,7 +26,7 @@
 +.updates.vigem.org
 +.3132372e302e302e31
 +.inputsuggestions.msdxcdn.microsoft.com
-+.tmge.alicdn.co
++.tmge.alicdn.com
 +.pti.store.microsoft.com
 +.disabled.invalid
 +.pre-api.miui.security.xiaomi.com
