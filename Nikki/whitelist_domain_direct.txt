@@ -169,3 +169,5 @@
 +.sectigo.com
 +.playfabapi.com
 +.www2.ati.com
++.ocsp-certum.com
++.footprintdns.com
