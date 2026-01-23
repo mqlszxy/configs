@@ -171,3 +171,6 @@
 +.www2.ati.com
 +.ocsp-certum.com
 +.footprintdns.com
++.geekuninstaller.com
++.aliapp.org
++.azurefd-test.net
