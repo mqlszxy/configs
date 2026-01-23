@@ -46,6 +46,7 @@
 +.api-map.meituan.net
 +.m2.dreport.meituan.net
 +.maplocatesdksnapshot.d.meituan.net
++.webcast-normal-m.amemvfa.com
 
 # 回环域名
 +.risk.dun.mi.com
