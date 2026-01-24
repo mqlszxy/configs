@@ -37,6 +37,7 @@
 +.amdcopen.m.umeng.com
 +.staticoffice.zhihu.com
 +.api.liquidlink.cn
++.ugui
 # 美团
 +.route-stats.d.meituan.net
 +.metrics-picture.d.meituan.net
@@ -62,7 +63,7 @@
 
 # 80端口无法连接
 +.qt.qq.com
-+.core.api.mijia.tech
++.api.mijia.tech
 +.stream.api.mijia.tech
 +.scenetemplate.cnbj1.mi-fds.com
 
