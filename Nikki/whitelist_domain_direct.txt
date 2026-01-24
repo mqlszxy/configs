@@ -174,3 +174,4 @@
 +.geekuninstaller.com
 +.aliapp.org
 +.azurefd-test.net
++.easylist.to

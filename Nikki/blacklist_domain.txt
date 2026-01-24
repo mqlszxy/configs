@@ -38,7 +38,6 @@
 +.staticoffice.zhihu.com
 +.api.liquidlink.cn
 +.ugui
-# 美团
 +.route-stats.d.meituan.net
 +.metrics-picture.d.meituan.net
 +.p14.dreport.meituan.net
@@ -48,6 +47,8 @@
 +.m2.dreport.meituan.net
 +.maplocatesdksnapshot.d.meituan.net
 +.webcast-normal-m.amemvfa.com
++.stun.services.mozilla.com
++.searchapp.bundleassets.example
 
 # 回环域名
 +.risk.dun.mi.com
