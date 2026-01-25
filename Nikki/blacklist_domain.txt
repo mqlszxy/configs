@@ -50,6 +50,8 @@
 +.webcast-normal-m.amemvfa.com
 +.stun.services.mozilla.com
 +.searchapp.bundleassets.example
++.h-yigroup.com
++.pixel-us-apac.rubiconproject.com
 
 # 回环域名
 +.risk.dun.mi.com
@@ -62,6 +64,12 @@
 +.logsdata.cxkfwn.com
 +.static-ecst.licdn.com
 +.imgs.search.brave.com
++.vcl-brain.ndcppx.com
++.whoami.akamai.net
++.vegslb.com
++.s2s.t13.io
++.bcp.crwdcntrl.net
++.ab.dns-finder.com
 
 # 80端口无法连接
 +.qt.qq.com
