@@ -28,6 +28,9 @@
 +.cloudflarestorage.com
 +.cloudflareinsights.com
 
+# 机场
++.wd-gold.net
+
 # 苹果
 +.apple.com
 
