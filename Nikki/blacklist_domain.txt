@@ -17,12 +17,13 @@
 
 # 流量净化
 +.miaozhen.com
++.reportcpanel.com
 
 # 无法解析域名
 +.tosv.byted.org
 +.storage.xiaomixiaoai.com
 +.cloudservice22.kingsoft-office-service.com
-+.4a16b35f1ab82ccc8719ed9f15c66491.clo.footprintdns.com
++.clo.footprintdns.com
 +.updates.vigem.org
 +.3132372e302e302e31
 +.inputsuggestions.msdxcdn.microsoft.com
