@@ -2,3 +2,4 @@
 
 # 西数机场
 +.wd-gold.com
++.wd-gold.net
