@@ -179,3 +179,4 @@
 +.azurefd-test.net
 +.easylist.to
 +.netmon.azure.com
++.sync.richaudience.com
