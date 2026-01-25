@@ -9,7 +9,7 @@ Fallback: &Fallback {type: select, proxies: [🔁 狮城故转, 🔁 台湾故�
 
 proxy-providers:
   WD:
-    url: "订阅URL"
+    url: "机场订阅URL"
     type: http
     interval: 86400
     health-check:
@@ -141,30 +141,29 @@ proxy-groups:
   - {name: 🚀 外网兜底, <<: *Fallback}
   - {name: 🧯 全局兜底, <<: *Fallback}
   # 节点
-  - {name: 🌐 放行节点, type: select, include-all: true, filter: "^((?!(直连|拒绝|DIRECT|reject)).)*$"}
+  - {name: 🌐 放行节点, type: select, include-all: true, filter: "(?i)^((?!(直连|拒绝|剩余|到期|traffic|expire|direct|reject)).)*$"}
   # 故转
-  - {name: 🔁 狮城故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(台|日|韩|深|美)).)*$"}
-  - {name: 🔁 台湾故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(台|台湾|🇹🇼|(?i)Taiwan))^((?!(港|美|韩|新|日|US|States|America)).)*$"}
-  - {name: 🔁 日本故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
-  - {name: 🔁 香港故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: 🔁 美国故转, type: fallback, include-all: true, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|韩|新|日)).)*$"}
-  - {name: 🔁 节点故转, type: fallback, include-all: true, interval: 300, filter: "^((?!(直连|拒绝|DIRECT|reject)).)*$"}
-
+  - {name: 🔁 狮城故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(新加坡|坡|狮城|sg|singapore))^((?!(台|日|韩|深|美)).)*$"}
+  - {name: 🔁 台湾故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(台|台湾|🇹🇼|taiwan))^((?!(港|美|韩|新|日|us|states|america)).)*$"}
+  - {name: 🔁 日本故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(日|jp|japan))^((?!(港|台|韩|新|美)).)*$"}
+  - {name: 🔁 香港故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(港|hk|hong))^((?!(台|日|韩|新|深|美)).)*$"}
+  - {name: 🔁 美国故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(美|us|states|america))^((?!(港|台|韩|新|日)).)*$"}
+  - {name: 🔁 节点故转, type: fallback, include-all: true, interval: 300, filter: "(?i)^((?!(直连|拒绝|剩余|到期|traffic|expire|direct|reject)).)*$"}
+  
 
 # 规则匹配
 rules:
   # 🛡️ 流量净化 (按危险优先级排序)
-  - RULE-SET,google_ads_domain,🛡️ 流量净化          # 谷歌广告
-  - RULE-SET,disney_ads_domain,🛡️ 流量净化          # disney广告
-  - RULE-SET,apple_ads_domain,🛡️ 流量净化           # apple广告
-  - RULE-SET,ad_domain,🛡️ 流量净化                  # 广告
+  - RULE-SET,google_ads_domain,🛡️ 流量净化                 # 谷歌广告
+  - RULE-SET,disney_ads_domain,🛡️ 流量净化                 # disney广告
+  - RULE-SET,apple_ads_domain,🛡️ 流量净化                  # apple广告
+  - RULE-SET,ad_domain,🛡️ 流量净化                         # 广告
   # 自建规则集（流量处理方式借用已配置策略组）
-    # 黑名单
   - RULE-SET,blacklist_domain,🛡️ 流量净化                  # 自建域名黑名单规则集
   - RULE-SET,blacklist_classical,🛡️ 流量净化               # 自建域名黑名单规则集
   - RULE-SET,blacklist_ip,🛡️ 流量净化,no-resolve           # 自建ip黑名单规则集
   # 📡 消息推送
-  - RULE-SET,google_fcm_domain,📡 消息推送          # GoogleFCM
+  - RULE-SET,google_fcm_domain,📡 消息推送                 # GoogleFCM
   # 白名单
   - RULE-SET,whitelist_domain_direct,🔗 直连服务           # 自建直连域名白名单规则集
   - RULE-SET,whitelist_ip_direct,🔗 直连服务,no-resolve    # 自建直连ip白名单规则集
@@ -175,12 +174,12 @@ rules:
   - RULE-SET,private_domain,🔗 直连服务
   # 国内直连域名
   - RULE-SET,cn_domain,🔗 直连服务
-  - RULE-SET,media_domain_cn,🔗 直连服务
-  - RULE-SET,games_domain_cn,🔗 直连服务
   - RULE-SET,geolocation_domain_cn,🔗 直连服务
+  - RULE-SET,media_domain_cn,🔗 直连服务
   # 游戏直连服务
-  - RULE-SET,steam_cn_domain,🔗 直连服务 # steam直连
-  - RULE-SET,nintendo_cn_domain,🔗 直连服务 # 任天堂直连
+  - RULE-SET,games_domain_cn,🔗 直连服务
+  - RULE-SET,steam_cn_domain,🔗 直连服务                   # steam直连
+  - RULE-SET,nintendo_cn_domain,🔗 直连服务                # 任天堂直连
   # 苹果直连服务
   - RULE-SET,apple_update_domain,🔗 直连服务
   - RULE-SET,apple_pki_domain,🔗 直连服务
@@ -262,17 +261,16 @@ rule-providers:
   # 🔗 中国地址
   cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs" }
   cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs" }
-  geolocation_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/geolocation-cn.mrs" }
-  games_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-games-cn.mrs" }
-  media_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-media-cn.mrs" }
+  geolocation_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-cn.mrs" }
+  media_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-media-cn.mrs" }
   # 🔍 Google
   google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs" }
   google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs" }
-  google_fcm_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.mrs" }                  # GoogleFCM
-  google_ads_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-ads.mrs" }                 # GoogleADS
-  google_gemini_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-gemini.mrs" }           # GoogleGemini
-  google_play_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-play.mrs" }               # GooglePlay
-  google_scholar_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-scholar.mrs" }         # GoogleScholar
+  google_fcm_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.mrs" }                          # GoogleFCM
+  google_ads_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-ads.mrs" }                         # GoogleADS
+  google_gemini_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-gemini.mrs" }                   # GoogleGemini
+  google_play_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-play.mrs" }                       # GooglePlay
+  google_scholar_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-scholar.mrs" }                 # GoogleScholar
   # 📲 Telegram
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
@@ -305,11 +303,12 @@ rule-providers:
   apple_ads_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@ads.mrs" }
   apple_tvplus_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-tvplus.mrs" }
   # 🎮 游戏
-  steam_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam@cn.mrs" }                     # steam
+  steam_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam@cn.mrs" }                          # steam
   steam_unlock_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steamunlocked.mrs" }
   steam_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs" }
-  nintendo_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/nintendo@cn.mrs" }               # nintendo
+  nintendo_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/nintendo@cn.mrs" }                    # nintendo
   nintendo_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/nintendo.mrs" }
+  games_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games-cn.mrs" }
   # 💶 PayPal
   paypal_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs" }
   # 👽 Reddit
