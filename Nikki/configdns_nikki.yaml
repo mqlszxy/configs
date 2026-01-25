@@ -9,7 +9,7 @@ Fallback: &Fallback {type: select, proxies: [🔁 狮城故转, 🔁 台湾故�
 
 proxy-providers:
   WD:
-    url: "机场订阅URL"
+    url: "订阅URL"
     type: http
     interval: 86400
     health-check:
@@ -163,16 +163,28 @@ rules:
   - RULE-SET,blacklist_domain,🛡️ 流量净化                  # 自建域名黑名单规则集
   - RULE-SET,blacklist_classical,🛡️ 流量净化               # 自建域名黑名单规则集
   - RULE-SET,blacklist_ip,🛡️ 流量净化,no-resolve           # 自建ip黑名单规则集
-    # 白名单
+  # 📡 消息推送
+  - RULE-SET,google_fcm_domain,📡 消息推送          # GoogleFCM
+  # 白名单
   - RULE-SET,whitelist_domain_direct,🔗 直连服务           # 自建直连域名白名单规则集
   - RULE-SET,whitelist_ip_direct,🔗 直连服务,no-resolve    # 自建直连ip白名单规则集
   - RULE-SET,whitelist_domain_proxy,🚀 外网兜底            # 自建代理域名白名单规则集
   - RULE-SET,whitelist_ip_proxy,🚀 外网兜底,no-resolve     # 自建代理ip白名单规则集
-  # 📡 消息推送
-  - RULE-SET,google_fcm_domain,📡 消息推送          # GoogleFCM
   # 内网直连
   - RULE-SET,private_ip,🔗 直连服务,no-resolve
   - RULE-SET,private_domain,🔗 直连服务
+  # 国内直连域名
+  - RULE-SET,cn_domain,🔗 直连服务
+  - RULE-SET,media_domain_cn,🔗 直连服务
+  - RULE-SET,games_domain_cn,🔗 直连服务
+  - RULE-SET,geolocation_domain_cn,🔗 直连服务
+  # 游戏直连服务
+  - RULE-SET,steam_cn_domain,🔗 直连服务 # steam直连
+  - RULE-SET,nintendo_cn_domain,🔗 直连服务 # 任天堂直连
+  # 苹果直连服务
+  - RULE-SET,apple_update_domain,🔗 直连服务
+  - RULE-SET,apple_pki_domain,🔗 直连服务
+  - RULE-SET,apple_cn_domain,🔗 直连服务
   # 💶 PayPal
   - RULE-SET,paypal_domain,💶 PayPal
   # 📲 Telegram
@@ -215,19 +227,10 @@ rules:
   - RULE-SET,google_play_domain,🔍 Google
   - RULE-SET,google_ip,🔍 Google,no-resolve
   - RULE-SET,google_domain,🔍 Google
-  # 🔗 直连服务
-    # 游戏直连服务
-  - RULE-SET,steam_cn_domain,🔗 直连服务 # steam直连
-  - RULE-SET,nintendo_cn_domain,🔗 直连服务 # 任天堂直连
-    # 苹果直连服务
-  - RULE-SET,apple_update_domain,🔗 直连服务
-  - RULE-SET,apple_pki_domain,🔗 直连服务
-  - RULE-SET,apple_cn_domain,🔗 直连服务
-  # 🚀 外网兜底
-  - RULE-SET,geolocation-!cn,🚀 外网兜底
-    # 国内直连
-  - RULE-SET,cn_domain,🔗 直连服务
+  # 国内直连ip
   - RULE-SET,cn_ip,🔗 直连服务
+  # 🚀 外网兜底域名
+  - RULE-SET,geolocation-!cn,🚀 外网兜底
   # 🧯 全局兜底
   - MATCH,🧯 全局兜底
 
@@ -253,11 +256,15 @@ rule-providers:
   blacklist_classical: { <<: *classical_text, url: "https://raw.githubusercontent.com/mqlszxy/configs/refs/heads/main/Nikki/blacklist_classical.txt" }          # 自定义黑名单
   # 🛡️ 流量净化
   ad_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs" }                           # MetaCubeX官方广告规则
-  # 🔗 直连服务
+  # 🔗 私有地址
   private_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs" }
   private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs" }
+  # 🔗 中国地址
   cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs" }
   cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs" }
+  geolocation_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/geolocation-cn.mrs" }
+  games_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-games-cn.mrs" }
+  media_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-media-cn.mrs" }
   # 🔍 Google
   google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs" }
   google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs" }
