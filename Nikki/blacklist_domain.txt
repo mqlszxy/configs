@@ -52,6 +52,11 @@
 +.searchapp.bundleassets.example
 +.h-yigroup.com
 +.pixel-us-apac.rubiconproject.com
++.personal.local.wps.cn
++.switch.pcfg.cache.wpscdn.cnaeb6c8a818c11f82f5f113438ca6b1797455fe75
++.staging.to-do.microsoft.com
++.wscdn.miaopai.com
+
 
 # 回环域名
 +.risk.dun.mi.com
@@ -73,8 +78,6 @@
 
 # 80端口无法连接
 +.qt.qq.com
-+.api.mijia.tech
-+.stream.api.mijia.tech
 +.scenetemplate.cnbj1.mi-fds.com
 
 # 访问端口无法连接
