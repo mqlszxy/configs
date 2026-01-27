@@ -10,11 +10,6 @@
 +.vcl-brain-v6-lf.ndcpp.com
 +.bjmxy.net
 
-# 杂项
-+.siomxity.net
-+.wallpaper.itopvpn.com
-+.optimise.net
-
 # 流量净化
 +.miaozhen.com
 +.reportcpanel.com
@@ -56,29 +51,3 @@
 +.switch.pcfg.cache.wpscdn.cnaeb6c8a818c11f82f5f113438ca6b1797455fe75
 +.staging.to-do.microsoft.com
 +.wscdn.miaopai.com
-
-
-# 回环域名
-+.risk.dun.mi.com
-
-# 443端口无法连接
-+.scuprodprv.m365.cloud.microsoft
-+.graph.facebook.com
-+.ingest.twitch.tv
-+.tmge.alicdn.com
-+.logsdata.cxkfwn.com
-+.static-ecst.licdn.com
-+.imgs.search.brave.com
-+.vcl-brain.ndcppx.com
-+.whoami.akamai.net
-+.vegslb.com
-+.s2s.t13.io
-+.bcp.crwdcntrl.net
-+.ab.dns-finder.com
-
-# 80端口无法连接
-+.qt.qq.com
-+.scenetemplate.cnbj1.mi-fds.com
-
-# 访问端口无法连接
-+.logsdata.cxkfwn.com
