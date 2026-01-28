@@ -113,3 +113,6 @@
 +.checkip.dyndns.com
 +.activity.windows.com
 +.mp.microsoft.com
++.pool.ntp.org
++.msftncsi.com
++.mm.bing.net
