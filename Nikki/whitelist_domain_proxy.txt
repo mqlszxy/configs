@@ -9,3 +9,6 @@
 +.browserleaks.com
 +.browserleaks.org
 +.browserleaks.net
+
+# 外网网站
++.whoer.net
