@@ -110,3 +110,4 @@
 +.qsearch-a.akamaihd.net
 +.pg.ignimgs.com
 +.direct.adsrvr.org
++.checkip.dyndns.com
