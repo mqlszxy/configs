@@ -12,8 +12,7 @@
 +.cdnjs.cloudflare.com
 +.dnshe.com
 +.publicsuffix.org
-+.c.pub.network
-+.statcounter.com
++.pub.network
 +.statcounter.com
 +.haoweichi.com
 +.r.stripe.com
@@ -37,7 +36,30 @@
 +.gamer520.com
 +.leak.ping0.cc
 +.time.windows.com
-+.ping0.cc
-+.ipv4.ping0.cc
++.aweme.snssdk.com
++.x1.c.lencr.org
++.api-js.mixpanel.com
++.msftconnecttest.com
++.data.microsoft.com
++.asus.com
++.config.office.com
++.bing.com
++.eb2.3lift.com
++.i.liadm.com
++.scamalytics.com
++.trackcmp.net
++.sync.kueezrtb.com
++.dis.criteo.com
++.mid.rkdms.com
++.hosts.ooklaserver.net
++.navvy.media.net
++.prism.app-us1.com
++.b1sync.zemanta.com
++.chenguangnetwork.com
++.onetag-sys.com
++.match.adsrvr.org
++.prebid.media.net
++.rubiconproject.com
++.speedtest.net
 
 

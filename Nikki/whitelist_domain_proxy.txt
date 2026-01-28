@@ -2,3 +2,9 @@
 
 # 西数机场
 +.wd-gold.com
+
+# 检测网站
++.ipleak.net
++.ipv4.ping0.cc
++.browserleaks.com
++.browserleaks.org
