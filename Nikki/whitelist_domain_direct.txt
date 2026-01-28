@@ -222,3 +222,6 @@
 +.static.redhat.com
 +.www.redhatstatic.com
 +.docs.redhat.com
++.edge.microsoft.com
++.wdcp.microsoft.com
++.cdn.jsdelivr.net
