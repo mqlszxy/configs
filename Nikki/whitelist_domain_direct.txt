@@ -92,3 +92,5 @@
 +.academia.edu
 +.mxtoolbox.com
 +.visualwebsiteoptimizer.com
++.whox.is
++.pubnation.com
