@@ -8,3 +8,4 @@
 +.ping0.cc
 +.browserleaks.com
 +.browserleaks.org
++.browserleaks.net
