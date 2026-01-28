@@ -94,3 +94,13 @@
 +.visualwebsiteoptimizer.com
 +.whox.is
 +.pubnation.com
++.bttrack.com
++.ssbsync-global.smartadserver.com
++.pg.cdnst.net
++.x.bidswitch.net
++.cs.admanmedia.com
++.hb.trustedstack.com
++.ssp-sync.criteo.com
++.ad.turn.com
++.idx.liadm.com
++.api.rlcdn.com
