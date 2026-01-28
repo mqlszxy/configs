@@ -136,10 +136,6 @@
 +.sync.richaudience.com
 +.csync-apac.smilewanted.com
 +.sync.connectad.io
-+.tr.blismedia.com
-+.bind.excelate.ai
-+.ssp.disqus.com
-+.certificates.godaddy.com
 +.rtb.adentifi.com
 +.um.simpli.fi
 +.sync.bfmio.com
@@ -205,3 +201,5 @@
 +.ads.betweendigital.com
 +.b1h.zemanta.com
 +.ad.yieldlab.net
++.api.revenuecat.com
++.login.live.com

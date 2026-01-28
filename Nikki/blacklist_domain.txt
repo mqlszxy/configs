@@ -53,3 +53,5 @@
 +.wscdn.miaopai.com
 +.hotspot1.oenet.fr
 +.sms-activate.io
++.omni-dex.io.com
++.ad.360yield.com

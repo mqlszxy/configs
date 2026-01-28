@@ -12,3 +12,9 @@
 
 # 外网网站
 +.whoer.net
+
++.bind.excelate.ai
++.ssp.disqus.com
++.certificates.godaddy.com
++.tr.blismedia.com
++.core.api.mijia.tech
