@@ -203,3 +203,8 @@
 +.ad.yieldlab.net
 +.api.revenuecat.com
 +.login.live.com
++.aws.found.io
++.wsimg.com
++.mpsnare.iesnare.com
++.reporting.cdndex.io
++.first.iovation.com
