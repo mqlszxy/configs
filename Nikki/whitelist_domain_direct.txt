@@ -109,3 +109,4 @@
 +.t.adx.opera.com
 +.qsearch-a.akamaihd.net
 +.pg.ignimgs.com
++.direct.adsrvr.org
