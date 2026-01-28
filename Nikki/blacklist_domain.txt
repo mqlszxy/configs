@@ -10,7 +10,6 @@
 +.vcl-brain-v6-lf.ndcpp.com
 +.bjmxy.net
 +.ipv6.ipleak.net
-+.dns6.browserleaks.org
 
 # 流量净化
 +.miaozhen.com
