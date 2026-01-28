@@ -5,6 +5,6 @@
 
 # 检测网站
 +.ipleak.net
-+.ipv4.ping0.cc
++.ping0.cc
 +.browserleaks.com
 +.browserleaks.org
