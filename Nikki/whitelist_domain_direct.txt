@@ -1,5 +1,8 @@
 # 直连域名白名单
 
+# 重要域名，不可拉黑
++.api.mijia.tech
+
 # 命中兜底规则，实际可以直连
 +.optimise.net
 +.fmhy.net
@@ -208,3 +211,14 @@
 +.mpsnare.iesnare.com
 +.reporting.cdndex.io
 +.first.iovation.com
++.statuspage.io
++.smetrics.redhat.com
++.consent.trustarc.com
++.consent-st.trustarc.com
++.sso.redhat.com
++.consent-pref.trustarc.com
++.access.redhat.com
++.assets.adobedtm.com
++.static.redhat.com
++.www.redhatstatic.com
++.docs.redhat.com
