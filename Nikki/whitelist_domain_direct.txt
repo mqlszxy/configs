@@ -111,3 +111,5 @@
 +.pg.ignimgs.com
 +.direct.adsrvr.org
 +.checkip.dyndns.com
++.activity.windows.com
++.mp.microsoft.com
