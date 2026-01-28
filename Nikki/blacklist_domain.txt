@@ -36,10 +36,9 @@
 +.api.liquidlink.cn
 +.ugui
 +.route-stats.d.meituan.net
-+.metrics-picture.d.meituan.net
 +.p14.dreport.meituan.net
 +.dxlvs.meituan.com
-+.metrics-picture.d.meituan.net
++.d.meituan.net
 +.api-map.meituan.net
 +.m2.dreport.meituan.net
 +.maplocatesdksnapshot.d.meituan.net
