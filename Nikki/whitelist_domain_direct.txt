@@ -60,7 +60,6 @@
 +.prebid.media.net
 +.rubiconproject.com
 +.speedtest.net
-
 +.ds.uncn.jp
 +.gum.criteo.com
 +.match.deepintent.com
@@ -109,3 +108,4 @@
 +.aa.agkn.com
 +.t.adx.opera.com
 +.qsearch-a.akamaihd.net
++.pg.ignimgs.com
