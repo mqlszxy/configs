@@ -82,6 +82,7 @@
 +.cdn.cookielaw.org
 +.b.cdnst.net
 +.cdn.ziffstatic.com
++.wns.windows.com
 
 
 
