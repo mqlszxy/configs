@@ -9,6 +9,7 @@
 +.hub5pr.v6.phub.sandai.net
 +.vcl-brain-v6-lf.ndcpp.com
 +.bjmxy.net
++.ipv6.ipleak.net
 
 # 流量净化
 +.miaozhen.com
@@ -52,3 +53,4 @@
 +.staging.to-do.microsoft.com
 +.wscdn.miaopai.com
 +.hotspot1.oenet.fr
++.sms-activate.io

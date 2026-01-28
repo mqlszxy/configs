@@ -1,5 +1,43 @@
 # 直连域名白名单
 
-# 命中兜底规则
+# 命中兜底规则，实际可以直连
 +.optimise.net
++.fmhy.net
++.cloudflareinsights.com
++.x31415926.top
++.ocsp.digicert.com
++.ecs.office.com
++.karing.app
++.cloudflare.com
++.cdnjs.cloudflare.com
++.dnshe.com
++.publicsuffix.org
++.c.pub.network
++.statcounter.com
++.statcounter.com
++.haoweichi.com
++.r.stripe.com
++.hostdare.com
++.m.stripe.com
++.m.stripe.network
++.js.stripe.com
++.merchant-ui-api.stripe.com
++.api.stripe.com
++.gates.cloudflare.com
++.geolocation.onetrust.com
++.dash.cloudflare.com
++.c.pub.network
++.floors.dev
++.dnschecker.org
++.ugc.feemoo.hk
++.steamzg.com
++.switch618.com
++.repository.certum.pl
++.ig.freer.blog
++.gamer520.com
++.leak.ping0.cc
++.time.windows.com
++.ping0.cc
++.ipv4.ping0.cc
+
 
