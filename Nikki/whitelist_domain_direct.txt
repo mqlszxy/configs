@@ -34,7 +34,6 @@
 +.repository.certum.pl
 +.ig.freer.blog
 +.gamer520.com
-+.leak.ping0.cc
 +.time.windows.com
 +.aweme.snssdk.com
 +.x1.c.lencr.org
@@ -61,5 +60,28 @@
 +.prebid.media.net
 +.rubiconproject.com
 +.speedtest.net
+
++.ds.uncn.jp
++.gum.criteo.com
++.match.deepintent.com
++.c21lg-d.media.net
++.cs.media.net
++.match.sharethrough.com
++.idsync.rlcdn.com
++.i6.liadm.com
++.hbx.media.net
++.sync.crwdcntrl.net
++.diffuser-cdn.app-us1.com
++.hb.yellowblue.io
++.grid-bidder.criteo.com
++.btlr.sharethrough.com
++.rp.liadm.com
++.pubgw.yahoo.com
++.lb.eu-1-id5-sync.com
++.id5-sync.com
++.cdn.cookielaw.org
++.b.cdnst.net
++.cdn.ziffstatic.com
+
 
 
