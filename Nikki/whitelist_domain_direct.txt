@@ -83,6 +83,7 @@
 +.b.cdnst.net
 +.cdn.ziffstatic.com
 +.wns.windows.com
++.unpkg.com
 
 
 
