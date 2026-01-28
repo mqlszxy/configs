@@ -51,3 +51,4 @@
 +.switch.pcfg.cache.wpscdn.cnaeb6c8a818c11f82f5f113438ca6b1797455fe75
 +.staging.to-do.microsoft.com
 +.wscdn.miaopai.com
++.hotspot1.oenet.fr
