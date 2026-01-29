@@ -1,10 +1,9 @@
 # 直连域名白名单
 
-# 重要域名，不可拉黑
+# 重要域名，不可拉黑，core.api.mijia.tech，80需要代理，443直连
 +.api.mijia.tech
 
 # 命中兜底规则，实际可以直连
-+.optimise.net
 +.fmhy.net
 +.cloudflareinsights.com
 +.x31415926.top
@@ -236,3 +235,4 @@
 +.log.snssdk.com
 +.ib.snssdk.com
 +.ecomuser.snssdk.com
++.cfwho.com

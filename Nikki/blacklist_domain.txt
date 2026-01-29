@@ -57,3 +57,4 @@
 +.ad.360yield.com
 +.burp
 +.is.snssdk.com
++.logger.wps.cn

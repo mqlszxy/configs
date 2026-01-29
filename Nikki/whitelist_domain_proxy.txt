@@ -16,3 +16,4 @@
 +.ssp.disqus.com
 +.certificates.godaddy.com
 +.tr.blismedia.com
++.optimise.net
