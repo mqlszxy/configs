@@ -225,3 +225,14 @@
 +.edge.microsoft.com
 +.wdcp.microsoft.com
 +.cdn.jsdelivr.net
++.stats.updategfiles.com
++.weather.service.msn.com
++.ip-api.com
++.sso.updategfiles.com
++.ied-api.updategfiles.com
++.s3.amazonaws.com
++.fern.xboxservices.com
++.mon.snssdk.com
++.log.snssdk.com
++.ib.snssdk.com
++.ecomuser.snssdk.com

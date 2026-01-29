@@ -172,18 +172,6 @@ rules:
   # 内网直连
   - RULE-SET,private_ip,🔗 直连服务,no-resolve
   - RULE-SET,private_domain,🔗 直连服务
-  # 国内直连域名
-  - RULE-SET,cn_domain,🔗 直连服务
-  - RULE-SET,geolocation_domain_cn,🔗 直连服务
-  - RULE-SET,media_domain_cn,🔗 直连服务
-  # 游戏直连服务
-  - RULE-SET,games_domain_cn,🔗 直连服务
-  - RULE-SET,steam_cn_domain,🔗 直连服务                   # steam直连
-  - RULE-SET,nintendo_cn_domain,🔗 直连服务                # 任天堂直连
-  # 苹果直连服务
-  - RULE-SET,apple_update_domain,🔗 直连服务
-  - RULE-SET,apple_pki_domain,🔗 直连服务
-  - RULE-SET,apple_cn_domain,🔗 直连服务
   # 💶 PayPal
   - RULE-SET,paypal_domain,💶 PayPal
   # 📲 Telegram
@@ -226,8 +214,20 @@ rules:
   - RULE-SET,google_play_domain,🔍 Google
   - RULE-SET,google_ip,🔍 Google,no-resolve
   - RULE-SET,google_domain,🔍 Google
+    # 国内直连域名
+  - RULE-SET,cn_domain,🔗 直连服务
+  - RULE-SET,geolocation_domain_cn,🔗 直连服务
+  - RULE-SET,media_domain_cn,🔗 直连服务
   # 国内直连ip
   - RULE-SET,cn_ip,🔗 直连服务
+  # 游戏直连服务
+  - RULE-SET,games_domain_cn,🔗 直连服务
+  - RULE-SET,steam_cn_domain,🔗 直连服务                   # steam直连
+  - RULE-SET,nintendo_cn_domain,🔗 直连服务                # 任天堂直连
+  # 苹果直连服务
+  - RULE-SET,apple_update_domain,🔗 直连服务
+  - RULE-SET,apple_pki_domain,🔗 直连服务
+  - RULE-SET,apple_cn_domain,🔗 直连服务
   # 🚀 外网兜底域名
   - RULE-SET,geolocation-!cn,🚀 外网兜底
   # 🧯 全局兜底
