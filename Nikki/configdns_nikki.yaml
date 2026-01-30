@@ -158,6 +158,7 @@ rules:
   - RULE-SET,disney_ads_domain,🛡️ 流量净化                 # disney广告
   - RULE-SET,apple_ads_domain,🛡️ 流量净化                  # apple广告
   - RULE-SET,ad_domain,🛡️ 流量净化                         # 广告
+  - AND,((DOMAIN-SUFFIX,core.api.mijia.tech),(DST-PORT,80)),🛡️ 流量净化   # core.api.mijia.tech:80无法连接
   # 自建规则集（流量处理方式借用已配置策略组）
   - RULE-SET,blacklist_domain,🛡️ 流量净化                  # 自建域名黑名单规则集
   - RULE-SET,blacklist_classical,🛡️ 流量净化               # 自建域名黑名单规则集
