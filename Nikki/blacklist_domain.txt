@@ -10,6 +10,7 @@
 +.vcl-brain-v6-lf.ndcpp.com
 +.bjmxy.net
 +.ipv6.ipleak.net
++.gajqz.chengdu.gov.cn
 
 # 流量净化
 +.miaozhen.com
@@ -60,3 +61,4 @@
 +.logger.wps.cn
 +.static-ecst.licdn.com
 +.dl.discuz.chat
++.captive1.mtrwifiportal.net
