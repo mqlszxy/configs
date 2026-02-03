@@ -256,3 +256,9 @@
 +.ev2-ring.msedge.net
 +.p-ring.msedge.net
 +.mcr-ring.msedge.net
++.itopupdate.com
++.microsoft.com
++.update.iobit.com
++.azr.footprintdns.com
++.us.sentry.io
++.r2.cloudflarestorage.com

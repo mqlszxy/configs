@@ -62,3 +62,4 @@
 +.static-ecst.licdn.com
 +.dl.discuz.chat
 +.captive1.mtrwifiportal.net
++.pawpal.itopvpn.com
