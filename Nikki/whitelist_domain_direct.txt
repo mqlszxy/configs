@@ -262,3 +262,5 @@
 +.azr.footprintdns.com
 +.us.sentry.io
 +.r2.cloudflarestorage.com
++.to-do.office.com
++.status.rapidssl.com
