@@ -264,3 +264,9 @@
 +.r2.cloudflarestorage.com
 +.to-do.office.com
 +.status.rapidssl.com
++.www2.ati.com
++.marketplace.visualstudio.com
++.default.exp-tas.com
++.main.vscode-cdn.net
++.ms-ceintl.gallery.vsassets.io
++.update.code.visualstudio.com
