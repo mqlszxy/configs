@@ -270,3 +270,5 @@
 +.main.vscode-cdn.net
 +.ms-ceintl.gallery.vsassets.io
 +.update.code.visualstudio.com
++.img-s-msn-com.akamaized.net
++.ipinfo.io
