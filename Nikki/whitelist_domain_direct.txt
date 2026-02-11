@@ -273,3 +273,5 @@
 +.img-s-msn-com.akamaized.net
 +.ipinfo.io
 +.arin.net
++.code.visualstudio.com
++.status.geotrust.com
