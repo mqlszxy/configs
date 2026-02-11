@@ -63,3 +63,9 @@
 +.captive1.mtrwifiportal.net
 +.pawpal.itopvpn.com
 +.staging.to-do.officeppe.com
++.dreport.meituan.net
++.hotspot1.vipnetwork.fr
++.uh2.kuwo.cn
++.uh1.kuwo.cn
++.portal-portm.sankuai.com
++.captive2.mtrwifiportal.net
