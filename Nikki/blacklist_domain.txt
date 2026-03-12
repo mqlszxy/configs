@@ -69,3 +69,6 @@
 +.uh1.kuwo.cn
 +.portal-portm.sankuai.com
 +.captive2.mtrwifiportal.net
++.stun.services.mozilla1.com
++.vuqsnedunsqqqnjqqnnjqbq.ctydoh.cn
++.hif-dliq.deepseek.com

@@ -144,10 +144,12 @@ proxy-groups:
   - {name: 🌐 放行节点, type: select, include-all: true, filter: "(?i)^((?!(直连|拒绝|剩余|到期|traffic|expire|direct|reject)).)*$"}
   # 故转
   - {name: 🔁 狮城故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(新加坡|坡|狮城|sg|singapore))^((?!(台|日|韩|深|美)).)*$"}
-  - {name: 🔁 台湾故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(台|台湾|🇹🇼|taiwan))^((?!(港|美|韩|新|日|us|states|america)).)*$"}
+  - {name: 🔁 台湾故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(台|台湾|🇹🇼|TW|taiwan))^((?!(港|美|韩|新|日|us|states|america)).)*$"}
   - {name: 🔁 日本故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(日|jp|japan))^((?!(港|台|韩|新|美)).)*$"}
   - {name: 🔁 香港故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(港|hk|hong))^((?!(台|日|韩|新|深|美)).)*$"}
   - {name: 🔁 美国故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(美|us|states|america))^((?!(港|台|韩|新|日)).)*$"}
+  - {name: 🔁 韩国故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(韩|kr))^((?!(港|台|美|新|日)).)*$"}
+  - {name: 🔁 英国故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(英|uk))^((?!(港|台|韩|新|日|美)).)*$"}
   - {name: 🔁 节点故转, type: fallback, include-all: true, interval: 300, filter: "(?i)^((?!(直连|拒绝|剩余|到期|traffic|expire|direct|reject)).)*$"}
   
 
