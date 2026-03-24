@@ -7,7 +7,7 @@
 # 故转节点
 Fallback: &Fallback {type: select, proxies: [🔁 狮城故转, 🔁 台湾故转, 🔁 日本故转, 🔁 香港故转, 🔁 美国故转, 🔁 英国故转, 🔁 韩国故转, 🔁 澳洲故转, 🌐 自选节点, 🔗 直连, 🚫 拒绝]}
 # 自选节点
-customize: &customize {type: select, proxies: [🔁 狮城故转, 🔁 台湾故转, 🔁 日本故转, 🔁 香港故转, 🔁 美国故转, 🔁 英国故转, 🔁 韩国故转, 🔁 澳洲故转, 🔗 直连, 🚫 拒绝]}
+customize: &customize {type: select, include-all: true, proxies: [🔁 狮城故转, 🔁 台湾故转, 🔁 日本故转, 🔁 香港故转, 🔁 美国故转, 🔁 英国故转, 🔁 韩国故转, 🔁 澳洲故转, 🔗 直连, 🚫 拒绝]}
 
 proxy-providers:
   WD:
