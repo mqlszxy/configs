@@ -4,8 +4,10 @@
 # 跑裸核用户请自行去掉下方控制面板模块的注释。
 # 机场订阅
 
-# 锚点
-Fallback: &Fallback {type: select, proxies: [🔁 狮城故转, 🔁 台湾故转, 🔁 日本故转, 🔁 香港故转, 🔁 美国故转, 🔁 节点故转, 🌐 放行节点, 🔗 直连, 🚫 拒绝]}
+# 故转节点
+Fallback: &Fallback {type: select, proxies: [🔁 狮城故转, 🔁 台湾故转, 🔁 日本故转, 🔁 香港故转, 🔁 美国故转, 🔁 英国故转, 🔁 韩国故转, 🔁 澳洲故转, 🌐 自选节点, 🔗 直连, 🚫 拒绝]}
+# 自选节点
+customize: &customize {type: select, proxies: [🔁 狮城故转, 🔁 台湾故转, 🔁 日本故转, 🔁 香港故转, 🔁 美国故转, 🔁 英国故转, 🔁 韩国故转, 🔁 澳洲故转, 🔗 直连, 🚫 拒绝]}
 
 proxy-providers:
   WD:
@@ -140,18 +142,16 @@ proxy-groups:
   - {name: 🔗 直连服务, <<: *Fallback}
   - {name: 🚀 外网兜底, <<: *Fallback}
   - {name: 🧯 全局兜底, <<: *Fallback}
-  # 节点
-  - {name: 🌐 放行节点, type: select, include-all: true, filter: "(?i)^((?!(直连|拒绝|剩余|到期|traffic|expire|direct|reject)).)*$"}
+  - {name: 🌐 自选节点, <<: *customize}
   # 故转
-  - {name: 🔁 狮城故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(新加坡|坡|狮城|sg|singapore))^((?!(台|日|韩|深|美)).)*$"}
-  - {name: 🔁 台湾故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(台|台湾|🇹🇼|TW|taiwan))^((?!(港|美|韩|新|日|us|states|america)).)*$"}
-  - {name: 🔁 日本故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(日|jp|japan))^((?!(港|台|韩|新|美)).)*$"}
-  - {name: 🔁 香港故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(港|hk|hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: 🔁 美国故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(美|us|states|america))^((?!(港|台|韩|新|日)).)*$"}
-  - {name: 🔁 韩国故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(韩|kr))^((?!(港|台|美|新|日)).)*$"}
-  - {name: 🔁 英国故转, type: fallback, include-all: true, interval: 300, filter: "(?i)(?=.*(英|uk))^((?!(港|台|韩|新|日|美)).)*$"}
-  - {name: 🔁 节点故转, type: fallback, include-all: true, interval: 300, filter: "(?i)^((?!(直连|拒绝|剩余|到期|traffic|expire|direct|reject)).)*$"}
-  
+  - {name: 🔁 狮城故转, type: fallback, include-all: true, filter: "(?i)(🇸🇬|新加坡|坡|狮城|SG|Singapore|SIN)", exclude-filter: "(?i)(台|台湾|日|日本|韩|韩国|深|深圳|美|美国|港|香港|UK|英|澳)", interval: 300, timeout: 5000, lazy: true}
+  - {name: 🔁 台湾故转, type: fallback, include-all: true, filter: "(?i)(🇹🇼|台|台湾|TW|Taiwan|Taipei)", exclude-filter: "(?i)(港|香港|美|美国|韩|韩国|新|新加坡|日|日本|UK|英|澳|states|america)", interval: 300, timeout: 5000, lazy: true}
+  - {name: 🔁 日本故转, type: fallback, include-all: true, filter: "(?i)(🇯🇵|日|日本|JP|Japan|Tokyo|TYO|Osaka)", exclude-filter: "(?i)(港|香港|台|台湾|韩|韩国|新|新加坡|美|美国|UK|英|澳)", interval: 300, timeout: 5000, lazy: true}
+  - {name: 🔁 香港故转, type: fallback, include-all: true, filter: "(?i)(🇭🇰|港|香港|HK|Hong Kong|HKG)", exclude-filter: "(?i)(台|台湾|日|日本|韩|韩国|新|新加坡|深|深圳|美|美国|UK|英|澳)", interval: 300, timeout: 5000, lazy: true}
+  - {name: 🔁 美国故转, type: fallback, include-all: true, filter: "(?i)(🇺🇸|美|美国|US|United States|America|NYC|LAX|Los Angeles|Chicago)", exclude-filter: "(?i)(港|香港|台|台湾|韩|韩国|新|新加坡|日|日本|UK|英|澳)", interval: 300, timeout: 5000, lazy: true}
+  - {name: 🔁 韩国故转, type: fallback, include-all: true, filter: "(?i)(🇰🇷|韩|韩国|KR|Korea|Seoul)", exclude-filter: "(?i)(港|香港|台|台湾|新|新加坡|日|日本|美|美国|UK|英|澳)", interval: 300, timeout: 5000, lazy: true}
+  - {name: 🔁 英国故转, type: fallback, include-all: true, filter: "(?i)(🇬🇧|英|英国|UK|United Kingdom|Britain|England|London|LHR|MAN)", exclude-filter: "(?i)(港|香港|台|台湾|韩|韩国|新|新加坡|日|日本|美|美国|澳|澳大利亚)", interval: 300, timeout: 5000, lazy: true}
+  - {name: 🔁 澳洲故转, type: fallback, include-all: true, filter: "(?i)(🇦🇺|澳|澳大利亚|Australia|Sydney|SYD|Melbourne)", exclude-filter: "(?i)(港|香港|台|台湾|韩|韩国|新|新加坡|日|日本|美|美国|UK|英)", interval: 300, timeout: 5000, lazy: true}
 
 # 规则匹配
 rules:
