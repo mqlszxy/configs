@@ -5,9 +5,9 @@
 # 机场订阅
 
 # 故转节点
-Fallback: &Fallback {type: select, proxies: [🔁 狮城故转, 🔁 台湾故转, 🔁 日本故转, 🔁 香港故转, 🔁 美国故转, 🔁 英国故转, 🔁 韩国故转, 🔁 澳洲故转, 🌐 自选节点, 🔗 直连, 🚫 拒绝]}
+Fallback: &Fallback {type: select, proxies: [🔁 狮城故转, 🔁 台湾故转, 🔁 日本故转, 🔁 香港故转, 🔁 美国故转, 🔁 英国故转, 🔁 韩国故转, 🔁 澳洲故转, 🌐 自选节点1, 🌐 自选节点2, 🌐 自选节点3, 🌐 自选节点4, 🔗 直连, 🚫 拒绝]}
 # 自选节点
-customize: &customize {type: select, include-all: true, proxies: [🔁 狮城故转, 🔁 台湾故转, 🔁 日本故转, 🔁 香港故转, 🔁 美国故转, 🔁 英国故转, 🔁 韩国故转, 🔁 澳洲故转, 🔗 直连, 🚫 拒绝]}
+customize: &customize {type: select, include-all: true}
 
 proxy-providers:
   WD:
@@ -142,7 +142,10 @@ proxy-groups:
   - {name: 🔗 直连服务, <<: *Fallback}
   - {name: 🚀 外网兜底, <<: *Fallback}
   - {name: 🧯 全局兜底, <<: *Fallback}
-  - {name: 🌐 自选节点, <<: *customize}
+  - {name: 🌐 自选节点1, <<: *customize}
+  - {name: 🌐 自选节点2, <<: *customize}
+  - {name: 🌐 自选节点3, <<: *customize}
+  - {name: 🌐 自选节点4, <<: *customize}
   # 故转
   - {name: 🔁 狮城故转, type: fallback, include-all: true, filter: "(?i)(🇸🇬|新加坡|坡|狮城|SG|Singapore|SIN)", exclude-filter: "(?i)(台|台湾|日|日本|韩|韩国|深|深圳|美|美国|港|香港|UK|英|澳)", interval: 300, timeout: 5000, lazy: true}
   - {name: 🔁 台湾故转, type: fallback, include-all: true, filter: "(?i)(🇹🇼|台|台湾|TW|Taiwan|Taipei)", exclude-filter: "(?i)(港|香港|美|美国|韩|韩国|新|新加坡|日|日本|UK|英|澳|states|america)", interval: 300, timeout: 5000, lazy: true}
