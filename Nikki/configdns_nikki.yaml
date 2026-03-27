@@ -125,6 +125,7 @@ proxy-groups:
   - {name: 🤖 AI, <<: *Fallback}
   - {name: 💻 Github, <<: *Fallback}
   - {name: 📹 YouTube, <<: *Fallback}
+  - {name: 🍎 Apple, <<: *Fallback}
   - {name: 🎮 游戏, <<: *Fallback}
   - {name: 🪟 Microsoft, <<: *Fallback}
   - {name: 🎥 TikTok, <<: *Fallback}
@@ -186,6 +187,8 @@ rules:
   - RULE-SET,telegram_domain,📲 Telegram
   # 📹 YouTube
   - RULE-SET,youtube_domain,📹 YouTube
+  # 🍎 Apple
+  - RULE-SET,apple_domain,🍎 Apple
   # 🤖 AI
   - RULE-SET,ai_domain,🤖 AI
   # 💻 Github
@@ -304,6 +307,7 @@ rule-providers:
   # 🪟 Microsoft
   microsoft_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs" }
   # 🍎 Apple
+  apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs" }
   apple_update_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-update.mrs" }
   apple_pki_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-pki.mrs" }
   apple_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-cn.mrs" }
