@@ -1,11 +1,12 @@
-# DNS防泄露版本
-# 必读！！！
-# 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
-# 跑裸核用户请自行去掉下方控制面板模块的注释。
-# 机场订阅
+# 节点信息
+proxies:
+  - {name: 🔗 直连, type: direct}
+  - {name: 🚫 拒绝, type: reject}
 
 # 自选节点
-customize: &customize {type: select, include-all: true}
+select: &select {type: select, proxies: [🌐 自选节点1, 🌐 自选节点2, 🌐 自选节点3, 🌐 自选节点4, 🔗 直连, 🚫 拒绝]}
+# 所有节点
+all: &all {type: select, include-all: true}
 
 proxy-providers:
   VPS:
@@ -18,10 +19,7 @@ proxy-providers:
       interval: 300
     proxy: 🔗 直连
 
-# 节点信息
-proxies:
-  - {name: 🔗 直连, type: direct}
-  - {name: 🚫 拒绝, type: reject}
+
 
 # 全局配置 
 mixed-port: 7890
@@ -38,27 +36,6 @@ profile:
   store-selected: true
   store-fake-ip: true
 
-# 为防止使用插件朋友遇到面板问题，我注释掉了此模块。
-#external-controller: 0.0.0.0:9090
-#secret: ""
-#external-ui: ui
-#external-ui-name: zashboard
-#external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
-
-# 嗅探（fakeip下其实可以不用嗅探）
-#sniffer:
-#  enable: true
-#  sniff:
-#    HTTP:
-#      ports: [80, 8080-8880]
-#      override-destination: true
-#    TLS:
-#      ports: [443, 8443]
-#    QUIC:
-#      ports: [443, 8443]
-#  skip-domain:
-#    - "Mijia Cloud"
-#    - "+.push.apple.com"
 
 # 入站
 tun:
@@ -102,30 +79,34 @@ dns:
 # 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
 proxy-groups:
   # 策略
-  - {name: 🔍 Google, <<: *customize}
-  - {name: 📲 Telegram, <<: *customize}
-  - {name: 🤖 AI, <<: *customize}
-  - {name: 💻 Github, <<: *customize}
-  - {name: 🖥️ Cloudflare, <<: *customize}
-  - {name: 📹 YouTube, <<: *customize}
-  - {name: 🍎 Apple, <<: *customize}
-  - {name: 🎮 游戏, <<: *customize}
-  - {name: 🪟 Microsoft, <<: *customize}
-  - {name: 🎥 TikTok, <<: *customize}
-  - {name: 📺 Netflix, <<: *customize}
-  - {name: 🏰 Disney, <<: *customize}
-  - {name: 🎞️ HBO Max, <<: *customize}
-  - {name: 📽️ Apple TV, <<: *customize}
-  - {name: 🎧 Spotify, <<: *customize}
-  - {name: 🐦 Twitter / X, <<: *customize}
-  - {name: 👽 Reddit, <<: *customize}
-  - {name: 💬 WhatsApp, <<: *customize}
-  - {name: 💶 PayPal, <<: *customize}
-  - {name: 🛡️ 流量净化, <<: *customize}
-  - {name: 📡 消息推送, <<: *customize}
-  - {name: 🔗 直连服务, <<: *customize}
-  - {name: 🚀 外网兜底, <<: *customize}
-  - {name: 🧯 全局兜底, <<: *customize}
+  - {name: 🔍 Google, <<: *select}
+  - {name: 📲 Telegram, <<: *select}
+  - {name: 🤖 AI, <<: *select}
+  - {name: 💻 Github, <<: *select}
+  - {name: 🖥️ Cloudflare, <<: *select}
+  - {name: 📹 YouTube, <<: *select}
+  - {name: 🍎 Apple, <<: *select}
+  - {name: 🎮 游戏, <<: *select}
+  - {name: 🪟 Microsoft, <<: *select}
+  - {name: 🎥 TikTok, <<: *select}
+  - {name: 📺 Netflix, <<: *select}
+  - {name: 🏰 Disney, <<: *select}
+  - {name: 🎞️ HBO Max, <<: *select}
+  - {name: 📽️ Apple TV, <<: *select}
+  - {name: 🎧 Spotify, <<: *select}
+  - {name: 🐦 Twitter / X, <<: *select}
+  - {name: 👽 Reddit, <<: *select}
+  - {name: 💬 WhatsApp, <<: *select}
+  - {name: 💶 PayPal, <<: *select}
+  - {name: 🛡️ 流量净化, <<: *select}
+  - {name: 📡 消息推送, <<: *select}
+  - {name: 🔗 直连服务, <<: *select}
+  - {name: 🚀 外网兜底, <<: *select}
+  - {name: 🧯 全局兜底, <<: *select}
+  - {name: 🌐 自选节点1, <<: *all}
+  - {name: 🌐 自选节点2, <<: *all}
+  - {name: 🌐 自选节点3, <<: *all}
+  - {name: 🌐 自选节点4, <<: *all}
   
 # 规则匹配
 rules:
