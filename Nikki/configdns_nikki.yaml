@@ -10,7 +10,7 @@ Fallback: &Fallback {type: select, proxies: [🔁 狮城故转, 🔁 台湾故�
 customize: &customize {type: select, include-all: true}
 
 proxy-providers:
-  WD:
+  ZGO:
     url: "机场订阅URL"
     type: http
     interval: 86400

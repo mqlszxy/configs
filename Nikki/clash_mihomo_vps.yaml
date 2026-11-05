@@ -1,0 +1,300 @@
+# DNS防泄露版本
+# 必读！！！
+# 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
+# 跑裸核用户请自行去掉下方控制面板模块的注释。
+# 机场订阅
+
+# 自选节点
+customize: &customize {type: select, include-all: true, proxies: [🔗 直连, 🚫 拒绝]}
+
+proxy-providers:
+  VPS:
+    url: "机场订阅URL"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 🔗 直连
+
+# 节点信息
+proxies:
+  - {name: 🔗 直连, type: direct}
+  - {name: 🚫 拒绝, type: reject}
+
+# 全局配置 
+mixed-port: 7890
+allow-lan: true
+bind-address: "*"
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+log-level: warning
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# 为防止使用插件朋友遇到面板问题，我注释掉了此模块。
+#external-controller: 0.0.0.0:9090
+#secret: ""
+#external-ui: ui
+#external-ui-name: zashboard
+#external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探（fakeip下其实可以不用嗅探）
+#sniffer:
+#  enable: true
+#  sniff:
+#    HTTP:
+#      ports: [80, 8080-8880]
+#      override-destination: true
+#    TLS:
+#      ports: [443, 8443]
+#    QUIC:
+#      ports: [443, 8443]
+#  skip-domain:
+#    - "Mijia Cloud"
+#    - "+.push.apple.com"
+
+# 入站
+tun:
+  enable: true
+  # system/gvisor/mixed
+  stack: mixed
+  dns-hijack: ["any:53", "tcp://any:53"]
+  #使用nikki，混入全部不修改的情况，开启接口指定为nikki
+  #device: nikki
+  #使用仅内核自行修改下面三项为true
+  auto-route: false
+  auto-redirect: false
+  auto-detect-interface: false
+
+# DNS模块
+dns:
+  enable: true
+  cache-algorithm: arc
+  listen: 0.0.0.0:1053
+  ipv6: false
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  resolve-concurrent: true                                      # DNS并发解析开关
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  direct-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  nameserver:
+    - https://8.8.8.8/dns-query
+  fake-ip-filter:
+    - 'rule-set:blacklist_domain'                               # 自建域名黑名单规则集
+    - 'rule-set:blacklist_classical'                            # 自建域名黑名单规则集    
+    - 'rule-set:realip_domain_direct'                           # 自建不使用fakeip的代理的规则集
+    - 'rule-set:realip_domain_proxy'                            # 自建不使用fakeip的直连的规则集
+  nameserver-policy:
+    'rule-set:blacklist_domain':                                # 自建域名黑名单规则集,DNS不解析
+      - 0.0.0.0
+    'rule-set:blacklist_classical':                             # 自建域名黑名单规则集,DNS不解析
+      - 0.0.0.0
+    'rule-set:realip_domain_direct':
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+    'rule-set:realip_domain_proxy':
+      - https://8.8.8.8/dns-query
+      - tls://1.1.1.1:853
+      - https://1.0.0.1/dns-query
+
+# 出站策略，根据自己情况调整每个策略里分组排序，增删都可以，比如把美国自动放到第一个，比如删除香港故转，注意别漏掉表情逗号等。
+# 如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
+# 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
+proxy-groups:
+  # 策略
+  - {name: 🔍 Google, <<: *customize}
+  - {name: 📲 Telegram, <<: *customize}
+  - {name: 🤖 AI, <<: *customize}
+  - {name: 💻 Github, <<: *customize}
+  - {name: 🖥️ Cloudflare, <<: *customize}
+  - {name: 📹 YouTube, <<: *customize}
+  - {name: 🍎 Apple, <<: *customize}
+  - {name: 🎮 游戏, <<: *customize}
+  - {name: 🪟 Microsoft, <<: *customize}
+  - {name: 🎥 TikTok, <<: *customize}
+  - {name: 📺 Netflix, <<: *customize}
+  - {name: 🏰 Disney, <<: *customize}
+  - {name: 🎞️ HBO Max, <<: *customize}
+  - {name: 📽️ Apple TV, <<: *customize}
+  - {name: 🎧 Spotify, <<: *customize}
+  - {name: 🐦 Twitter / X, <<: *customize}
+  - {name: 👽 Reddit, <<: *customize}
+  - {name: 💬 WhatsApp, <<: *customize}
+  - {name: 💶 PayPal, <<: *customize}
+  - {name: 🛡️ 流量净化, <<: *customize}
+  - {name: 📡 消息推送, <<: *customize}
+  - {name: 🔗 直连服务, <<: *customize}
+  - {name: 🚀 外网兜底, <<: *customize}
+  - {name: 🧯 全局兜底, <<: *customize}
+  
+# 规则匹配
+rules:
+  # 🛡️ 流量净化 (按危险优先级排序)
+  - RULE-SET,google_ads_domain,🛡️ 流量净化                 # 谷歌广告
+  - RULE-SET,disney_ads_domain,🛡️ 流量净化                 # disney广告
+  - RULE-SET,apple_ads_domain,🛡️ 流量净化                  # apple广告
+  - RULE-SET,ad_domain,🛡️ 流量净化                         # 广告
+  # 📡 消息推送
+  - RULE-SET,google_fcm_domain,📡 消息推送                 # GoogleFCM
+  # 内网直连
+  - RULE-SET,private_ip,🔗 直连服务,no-resolve
+  - RULE-SET,private_domain,🔗 直连服务
+  # 💶 PayPal
+  - RULE-SET,paypal_domain,💶 PayPal
+  # 📲 Telegram
+  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
+  - RULE-SET,telegram_domain,📲 Telegram
+  # 🖥️ Cloudflare
+  - RULE-SET,cloudflare_domain,🖥️ Cloudflare
+  # 📹 YouTube
+  - RULE-SET,youtube_domain,📹 YouTube
+  # 🍎 Apple
+  - RULE-SET,apple_domain,🍎 Apple
+  # 🤖 AI
+  - RULE-SET,ai_domain,🤖 AI
+  # 💻 Github
+  - RULE-SET,github_domain,💻 Github
+  # 🎥 TikTok
+  - RULE-SET,tiktok_domain,🎥 TikTok
+  # 📺 Netflix
+  - RULE-SET,netflix_ip,📺 Netflix,no-resolve
+  - RULE-SET,netflix_domain,📺 Netflix
+  # 🏰 Disney
+  - RULE-SET,disney_domain,🏰 Disney
+  # 🎞️ HBO Max
+  - RULE-SET,hbo_domain,🎞️ HBO Max
+  # 📽️ Apple TV
+  - RULE-SET,apple_tvplus_domain,📽️ Apple TV
+  # 🎧 Spotify
+  - RULE-SET,spotify_domain,🎧 Spotify
+  # 🎮 游戏
+  - RULE-SET,steam_unlock_domain,🎮 游戏
+  - RULE-SET,steam_domain,🎮 游戏
+  - RULE-SET,nintendo_domain,🎮 游戏
+  # 🐦 Twitter / X
+  - RULE-SET,twitter_domain,🐦 Twitter / X
+  # 👽 Reddit
+  - RULE-SET,reddit_domain,👽 Reddit
+  # 💬 WhatsApp
+  - RULE-SET,whatsapp_domain,💬 WhatsApp
+  # 🪟 Microsoft
+  - RULE-SET,microsoft_cn_domain,🪟 Microsoft
+  # 🔍 Google
+  - RULE-SET,google_scholar_domain,🔍 Google 
+  - RULE-SET,google_gemini_domain,🔍 Google
+  - RULE-SET,google_play_domain,🔍 Google
+  - RULE-SET,google_ip,🔍 Google,no-resolve
+  - RULE-SET,google_domain,🔍 Google
+    # 国内直连域名
+  - RULE-SET,cn_domain,🔗 直连服务
+  - RULE-SET,geolocation_domain_cn,🔗 直连服务
+  - RULE-SET,media_domain_cn,🔗 直连服务
+  # 国内直连ip
+  - RULE-SET,cn_ip,🔗 直连服务
+  # 游戏直连服务
+  - RULE-SET,games_domain_cn,🔗 直连服务
+  - RULE-SET,steam_cn_domain,🔗 直连服务                   # steam直连
+  - RULE-SET,nintendo_cn_domain,🔗 直连服务                # 任天堂直连
+  # 苹果直连服务
+  - RULE-SET,apple_update_domain,🔗 直连服务
+  - RULE-SET,apple_pki_domain,🔗 直连服务
+  - RULE-SET,apple_cn_domain,🔗 直连服务
+  # 🚀 外网兜底域名
+  - RULE-SET,geolocation-!cn,🚀 外网兜底
+  # 🧯 全局兜底
+  - MATCH,🧯 全局兜底
+
+
+# 规则集
+## type：可选http/file/inline  behavior：可选domain/ipcidr/classical format：可选yaml/text/mrs
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  domain_text: &domain_text {type: http, interval: 86400, behavior: domain, format: text}
+  ip_text: &ip_text {type: http, interval: 86400, behavior: ipcidr, format: text}
+  classical_text: &classical_text {type: http, interval: 86400, behavior: classical, format: text}
+
+rule-providers: 
+  # 🛡️ 流量净化
+  ad_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs" }                           # MetaCubeX官方广告规则
+  # 🔗 私有地址
+  private_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs" }
+  private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs" }
+  # 🔗 中国地址
+  cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs" }
+  cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs" }
+  geolocation_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-cn.mrs" }
+  media_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-media-cn.mrs" }
+  # 🔍 Google
+  google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs" }
+  google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs" }
+  google_fcm_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.mrs" }                          # GoogleFCM
+  google_ads_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google@ads.mrs" }                         # GoogleADS
+  google_gemini_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-gemini.mrs" }                   # GoogleGemini
+  google_play_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-play.mrs" }                       # GooglePlay
+  google_scholar_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-scholar.mrs" }                 # GoogleScholar
+  # 📲 Telegram
+  telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
+  telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
+  # 🤖 AI
+  ai_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs" }
+  # 💻 Github
+  github_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
+  # 🖥️ Cloudflare
+  cloudflare_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cloudflare.mrs" }
+  # 📹 YouTube
+  youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs" }
+  # 🎥 TikTok
+  tiktok_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs" }
+  # 📺 Netflix
+  netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs" }
+  netflix_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs" }
+  # 🏰 Disney
+  disney_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/disney.mrs" }
+  disney_ads_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/disney@ads.mrs" }
+  # 🎞️ HBO Max
+  hbo_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/hbo.mrs" }
+  # 🎧 Spotify
+  spotify_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs" }
+  # 🐦 Twitter / X
+  twitter_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs" }
+  # 🪟 Microsoft
+  microsoft_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs" }
+  # 🍎 Apple
+  apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs" }
+  apple_update_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-update.mrs" }
+  apple_pki_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-pki.mrs" }
+  apple_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-cn.mrs" }
+  apple_ads_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@ads.mrs" }
+  apple_tvplus_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-tvplus.mrs" }
+  # 🎮 游戏
+  steam_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam@cn.mrs" }                          # steam
+  steam_unlock_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steamunlocked.mrs" }
+  steam_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs" }
+  nintendo_cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/nintendo@cn.mrs" }                    # nintendo
+  nintendo_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/nintendo.mrs" }
+  games_domain_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games-cn.mrs" }
+  # 💶 PayPal
+  paypal_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs" }
+  # 👽 Reddit
+  reddit_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/reddit.mrs" }
+  # 💬 WhatsApp
+  whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/whatsapp.mrs" }
+  # 🚀 外网兜底
+  geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs" }

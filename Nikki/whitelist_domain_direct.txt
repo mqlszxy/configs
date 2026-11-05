@@ -274,7 +274,6 @@
 +.ms-ceintl.gallery.vsassets.io
 +.update.code.visualstudio.com
 +.img-s-msn-com.akamaized.net
-+.ipinfo.io
 +.arin.net
 +.code.visualstudio.com
 +.status.geotrust.com
