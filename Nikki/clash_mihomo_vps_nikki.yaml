@@ -5,7 +5,7 @@
 # 机场订阅
 
 # 自选节点
-customize: &customize {type: select, include-all: true, proxies: [🔗 直连, 🚫 拒绝]}
+customize: &customize {type: select, include-all: true}
 
 proxy-providers:
   VPS:
@@ -95,23 +95,7 @@ dns:
     - https://doh.pub/dns-query
   nameserver:
     - https://8.8.8.8/dns-query
-  fake-ip-filter:
-    - 'rule-set:blacklist_domain'                               # 自建域名黑名单规则集
-    - 'rule-set:blacklist_classical'                            # 自建域名黑名单规则集    
-    - 'rule-set:realip_domain_direct'                           # 自建不使用fakeip的代理的规则集
-    - 'rule-set:realip_domain_proxy'                            # 自建不使用fakeip的直连的规则集
-  nameserver-policy:
-    'rule-set:blacklist_domain':                                # 自建域名黑名单规则集,DNS不解析
-      - 0.0.0.0
-    'rule-set:blacklist_classical':                             # 自建域名黑名单规则集,DNS不解析
-      - 0.0.0.0
-    'rule-set:realip_domain_direct':
-      - https://dns.alidns.com/dns-query
-      - https://doh.pub/dns-query
-    'rule-set:realip_domain_proxy':
-      - https://8.8.8.8/dns-query
-      - tls://1.1.1.1:853
-      - https://1.0.0.1/dns-query
+
 
 # 出站策略，根据自己情况调整每个策略里分组排序，增删都可以，比如把美国自动放到第一个，比如删除香港故转，注意别漏掉表情逗号等。
 # 如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
